@@ -1,0 +1,17 @@
+<div class="container nav">
+  <nav class="navbar bg-body-tertiary">
+    <img src="assets/images/book png img.png" alt="books">
+    <a routerLink="/home">Home</a>
+    <a routerLink="/about">About Library</a>
+    <a routerLink="/rules">Rules & Regulation</a>
+    <a routerLink="/price-card">Price Card</a>
+    
+    <a routerLink="/login">Login</a>
+    <a routerLink="/search">Search</a>
+    <a routerLink="/add-book" *ngIf="add == 'admin'">Add book</a>
+    
+  </nav>
+</div>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

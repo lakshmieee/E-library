@@ -1,0 +1,30 @@
+p{
+    color: black;
+    font-size: 20px;
+}
+a{
+    
+    text-decoration: none;
+    border: 1px solid rgb(134, 132, 132);
+    padding:8px;
+    border-radius: 5px;
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: white;
+    color: black;
+    background-color: rgb(178, 176, 176);
+}
+img {
+   
+    opacity: 0.7;
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+footer{
+    background-color: gray;
+    text-align: center;
+   
+}
+footer p{
+    font-size: 15px;
+}
+

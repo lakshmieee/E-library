@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="card text-white col-lg-12 col-md-12 col-12">
+        <img src="assets/images/homebg.jpg" alt="homebg" class="img-fluid">
+        <div class="card-img-overlay">
+
+
+            <form [formGroup]="regFormLogin" class="card-title">
+                <div class="row">
+                <div class="col-md-4">
+                <h3>Registration</h3>
+                <label for="firstName">First Name </label>
+                <input type="text" formControlName="firstName" class="form-control">
+                <label for="lastName">Last Name</label>
+                <input type="text" formControlName="lastName" class="form-control">
+                <label for="email">Email Address</label>
+                <input type="text" formControlName="email" class="form-control" >
+                <p>**Email will be a username for login </p>
+                <label for="password">Password</label>
+                <input type="password" formControlName="password" class="form-control"><br>
+                
+                <button class="btn btn-primary " [disabled]="!regFormLogin.valid">Sign Up</button>
+            </div></div>
+            </form>
+           
+            
+        </div>
+    </div>
+  </div>
+  <footer>
+    <p>© Copyright 2023  Digital Library </p>
+        </footer>
