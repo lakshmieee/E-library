@@ -1,0 +1,11 @@
+{
+  "signUp": [
+    {
+      "firstName": "Lak",
+      "lastName": "Bas",
+      "email": "lakbas@gmail.com",
+      "password": "1234567891",
+      "id": 1
+    }
+  ]
+}

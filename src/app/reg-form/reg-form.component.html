@@ -18,7 +18,7 @@
                 <label for="password">Password</label>
                 <input type="password" formControlName="password" class="form-control"><br>
                 
-                <button class="btn btn-primary " [disabled]="!regFormLogin.valid">Sign Up</button>
+                <button class="btn btn-primary " [disabled]="!regFormLogin.valid" (click)="signup()" >Sign Up</button>
             </div></div>
             </form>
            

@@ -1,5 +1,7 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -7,9 +9,15 @@ import { ToastrService } from 'ngx-toastr';
   templateUrl: './login-form.component.html',
   styleUrls: ['./login-form.component.css']
 })
-export class LoginFormComponent {
+export class LoginFormComponent implements OnInit{
 
-
+constructor(private rou:ActivatedRoute, private http:HttpClient, private route:Router, private toast:ToastrService){}
+  ngOnInit(): void {
+   this.rou.params.subscribe((res)=>{
+    
+   })
+  }
+  
   
   public get: any;
   login =new FormGroup({
@@ -18,13 +26,24 @@ export class LoginFormComponent {
 
   })
 
-  getDetails(){
-    this.get={
-  userName : this.login.controls['userName'].value,
-  password : this.login.controls['password'].value
-};
-console.log(this.get);
 
+  getDetails(){
+  this.http.get<any>("http://localhost:3000/signUp").subscribe((res)=>{
+    const user =res.find((a:any)=>{
+      return a.email === this.login.value.userName && a.password ===this.login.value.password
+    });
+    if(user){
+alert("you are successfully login");
+this.login.reset();
+this.route.navigate(['/search']);
+    }else{
+      alert("User not found");
+      this.route.navigate(['/login']);
+    }
+  })
+  
  }
+
+
 
 }

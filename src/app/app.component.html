@@ -6,10 +6,24 @@
     <a routerLink="/rules">Rules & Regulation</a>
     <a routerLink="/price-card">Price Card</a>
     
-    <a   routerLink="/search">Search</a>
+    <a  routerLink="/search">Seacrh</a>
+  
     <a routerLink="/add-book" *ngIf="add == 'admin'">Add book</a>
-    <a class="login" routerLink="/login" ><i class="fa-solid fa-user"></i>Login</a>
-    <a routerLink="/signup">Register</a>
+<ng-container *ngIf="true;then authUser;else  notauthUser">
+
+</ng-container>
+
+<ng-template #authUser>
+  <a class="login"  routerLink="/login" ><i class="fa-solid fa-user"></i>Login</a>
+  <a routerLink="/signup">Register</a>
+
+</ng-template>
+    
+<ng-template #notauthUser>   
+      <a style="cursor: pointer"  href="">logout</a>
+   
+    </ng-template>
+    
   </nav>
 </div>
 

@@ -13,13 +13,15 @@ import { AddBookComponent } from './add-book/add-book.component';
 import { EditBookComponent } from './edit-book/edit-book.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { BookListService } from './book-list.service';
+import { BookListService } from './_service/book-list.service';
 import { AuthGuard } from './auth.guard';
 import { FilterPipe } from './pipes/filter.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDialogModule} from '@angular/material/dialog';
 import { DeleteConfirmBoxComponent } from './delete-confirm-box/delete-confirm-box.component';
 import { ToastrModule } from 'ngx-toastr';
+import { HttpClientModule } from '@angular/common/http';
+import { AuthService } from './_service/auth.service';
 
 
 @NgModule({
@@ -45,9 +47,10 @@ import { ToastrModule } from 'ngx-toastr';
     FormsModule,
     BrowserAnimationsModule,
     MatDialogModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    HttpClientModule
   ],
-  providers: [BookListService,AuthGuard],
+  providers: [BookListService,AuthGuard,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

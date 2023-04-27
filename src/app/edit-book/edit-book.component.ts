@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { BookListService } from '../book-list.service';
+import { BookListService } from '../_service/book-list.service';
 
 @Component({
   selector: 'app-edit-book',
