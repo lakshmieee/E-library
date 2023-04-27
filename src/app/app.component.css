@@ -13,4 +13,10 @@ img{
 a{
     color: white;
 }
+.login{
+    margin-left:500px;
+}
+.fa-user{
+    padding-right: 5px;
+}
 

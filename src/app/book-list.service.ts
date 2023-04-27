@@ -108,9 +108,9 @@ export class BookListService {
   },
  ]
 
- deleteList(index: number){
-  const deletedList = this.listOfbook.splice(index,1);
-  return deletedList[0];  
- }
+//  deleteList(index: number){
+//   const deletedList = this.listOfbook.splice(index,1);
+//   return deletedList[0];  
+//  }
 
 }

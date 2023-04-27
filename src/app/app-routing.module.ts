@@ -13,13 +13,14 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
-  {path:'', component:HomeComponent},
+  {path:'', redirectTo:'home',pathMatch:'full'},
   {path:'home', component:HomeComponent},
   {path:'about', component:AboutLibraryComponent},
   {path:'rules', component:RulesAndRegulationComponent},
   {path:'price-card', component:PriceCardComponent},
   {path:'signup/:form', component:RegFormComponent},
   {path:'login', component:LoginFormComponent},
+  {path:'search/:return', component:SearchComponent},
   {path:'search', component:SearchComponent},
   {path:'add-book', component:AddBookComponent, canActivate:[AuthGuard]},
   {path:'edit-book/:bookId', component:EditBookComponent, canActivate:[AuthGuard]},

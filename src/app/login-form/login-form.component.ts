@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login-form',
@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login-form.component.css']
 })
 export class LoginFormComponent {
+
 
   
   public get: any;
@@ -18,13 +19,11 @@ export class LoginFormComponent {
   })
 
   getDetails(){
-this.get={
+    this.get={
   userName : this.login.controls['userName'].value,
   password : this.login.controls['password'].value
 };
 console.log(this.get);
-
-
 
  }
 

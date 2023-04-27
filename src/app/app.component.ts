@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   
+  constructor(private toaster:ToastrService){}
+
   title = 'E_Library';
   ngOnInit(): void {
     localStorage.setItem('editBook','admin');
@@ -16,4 +19,7 @@ export class AppComponent implements OnInit {
   }
   public add=  localStorage.getItem('addBook');
  
+  
+
+  
 }

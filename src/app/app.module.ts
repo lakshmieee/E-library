@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -17,6 +16,11 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { BookListService } from './book-list.service';
 import { AuthGuard } from './auth.guard';
 import { FilterPipe } from './pipes/filter.pipe';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatDialogModule} from '@angular/material/dialog';
+import { DeleteConfirmBoxComponent } from './delete-confirm-box/delete-confirm-box.component';
+import { ToastrModule } from 'ngx-toastr';
+
 
 @NgModule({
   declarations: [
@@ -31,13 +35,17 @@ import { FilterPipe } from './pipes/filter.pipe';
     AddBookComponent,
     EditBookComponent,
     PageNotFoundComponent,
-    FilterPipe
+    FilterPipe,
+    DeleteConfirmBoxComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
+    ToastrModule.forRoot()
   ],
   providers: [BookListService,AuthGuard],
   bootstrap: [AppComponent]

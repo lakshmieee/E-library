@@ -7,3 +7,6 @@ footer{
     background-color:rgb(240, 237, 237);
     height:100vh;
 }
+button{
+    margin:10px;
+}

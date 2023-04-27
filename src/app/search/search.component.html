@@ -33,11 +33,11 @@
             {{book.availablebooks}}
         </td>
         <td *ngIf="edit == 'admin'"><i class="fa-solid fa-pen" style="cursor: pointer" (click)="editBook(book.bookId)"></i></td>
-        <td *ngIf="del == 'admin'"><i class="fa-solid fa-trash-can" (click)="deleteItem(i)"></i></td>
+        <td *ngIf="del == 'admin'"><i class="fa-solid fa-trash-can" (click)="openDialog(i)"></i></td>
     </tr>
 </tbody>
     </table>
-    <!-- <p>Deleted booK: {{ deletedBook }}</p> -->
+  
 </div>
 <footer>
     <p>© Copyright 2023  Digital Library </p>

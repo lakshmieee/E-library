@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BookListService } from '../book-list.service';
 
 @Component({
@@ -20,12 +20,12 @@ export class EditBookComponent {
   editedVal: any;
   
 
-  constructor( private route:ActivatedRoute, private book:BookListService){}
+  constructor( private route:ActivatedRoute,private rou:Router, private book:BookListService){}
 
   ngOnInit(): void {
     //subcribe the val from the service
    this.route.params.subscribe((val)=>{
-    let bookid = val['bookId'];
+    let bookid = val['bookId']; 
     let filterBook=this.book.listOfbook.filter(note => note.bookId === bookid);
     console.log(filterBook);
 
@@ -48,6 +48,10 @@ export class EditBookComponent {
       noOfBooks:this.editBook.controls['noOfBooks'].value,
        }
 console.log(this.editedVal);
+  }
+
+  returnToSearch(){
+this.rou.navigate(['/search']);
   }
 }
 
