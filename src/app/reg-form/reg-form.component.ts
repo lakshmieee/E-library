@@ -19,10 +19,10 @@ export class RegFormComponent {
 
     })
 
-    constructor(private rou:ActivatedRoute){}
-  ngOnInit(): void {
-      this.formLogin = this.rou.snapshot.paramMap.get('form') === 'form';
-    }
+  //   constructor(private rou:ActivatedRoute){}
+  // ngOnInit(): void {
+  //     this.formLogin = this.rou.snapshot.paramMap.get('form') === 'form';
+  //   }
 
 }
 

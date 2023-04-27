@@ -18,7 +18,7 @@ const routes: Routes = [
   {path:'about', component:AboutLibraryComponent},
   {path:'rules', component:RulesAndRegulationComponent},
   {path:'price-card', component:PriceCardComponent},
-  {path:'signup/:form', component:RegFormComponent},
+  {path:'signup', component:RegFormComponent},
   {path:'login', component:LoginFormComponent},
   {path:'search/:return', component:SearchComponent},
   {path:'search', component:SearchComponent},
